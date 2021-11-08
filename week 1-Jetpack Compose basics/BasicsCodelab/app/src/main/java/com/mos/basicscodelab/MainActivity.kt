@@ -31,7 +31,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun OnboardingScreen(onContinueClicked: () -> Unit) {
-    var shouldShowOnboarding by remember { mutableStateOf(true) }
 
     Surface {
         Column(
