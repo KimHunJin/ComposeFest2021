@@ -66,7 +66,7 @@ class HelloCodelabActivity : AppCompatActivity() {
 /**
  * A ViewModel extracts _state_ from the UI and defines _events_ that can update it.
  */
-class HelloViewModel : ViewModel() {
+class HelloCodelabViewModel : ViewModel() {
 
     // LiveData holds state which is observed by the UI
     // (state flows down from ViewModel)
@@ -84,7 +84,7 @@ class HelloViewModel : ViewModel() {
  * An example showing unidirectional data flow in the View system using a ViewModel.
  */
 class HelloCodeLabActivityWithViewModel : AppCompatActivity() {
-    private val helloViewModel by viewModels<HelloViewModel>()
+    private val helloViewModel by viewModels<HelloCodelabViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -114,7 +114,7 @@ class HelloActivityCompose : AppCompatActivity() {
 }
 
 @Composable
-private fun HelloScreen(helloViewModel: HelloViewModel = viewModel()) {
+private fun HelloScreen(helloViewModel: HelloCodelabViewModel = viewModel()) {
     // helloViewModel follows the Lifecycle as the the Activity or Fragment that calls this
     // composable function.
 
