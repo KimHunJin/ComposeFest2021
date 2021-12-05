@@ -60,8 +60,11 @@ class TopAppBarTest {
             )
         }
 
-        composeTestRule
-            .onNodeWithContentDescription(RallyScreen.Accounts.name)
-            .assertExists()
+        composeTestRule.onNode(
+            hasText(RallyScreen.Accounts.name.uppercase(Locale.getDefault()))
+                    and
+                    hasParent(hasContentDescription(RallyScreen.Accounts.name)),
+            useUnmergedTree = true
+        ).assertExists()
     }
 }
